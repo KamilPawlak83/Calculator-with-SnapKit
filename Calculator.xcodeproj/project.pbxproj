@@ -17,6 +17,7 @@
 		8E915972271986100039CD3E /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E915971271986100039CD3E /* CalculatorUITests.swift */; };
 		8E915974271986100039CD3E /* CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E915973271986100039CD3E /* CalculatorUITestsLaunchTests.swift */; };
 		8E9159822719880E0039CD3E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E9159812719880E0039CD3E /* SnapKit */; };
+		8E91598427199BFA0039CD3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91598327199BFA0039CD3E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		8E91596D271986100039CD3E /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E915971271986100039CD3E /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		8E915973271986100039CD3E /* CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E91598327199BFA0039CD3E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				8E9159592719860F0039CD3E /* Assets.xcassets */,
 				8E91595B2719860F0039CD3E /* LaunchScreen.storyboard */,
 				8E91595E2719860F0039CD3E /* Info.plist */,
+				8E91598327199BFA0039CD3E /* Constants.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				8E9159552719860B0039CD3E /* ViewController.swift in Sources */,
 				8E9159512719860B0039CD3E /* AppDelegate.swift in Sources */,
 				8E9159532719860B0039CD3E /* SceneDelegate.swift in Sources */,
+				8E91598427199BFA0039CD3E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
