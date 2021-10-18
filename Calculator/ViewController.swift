@@ -10,6 +10,24 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    private var isFinishedTyping = true
+    
+    private var isDotUsed = false
+    
+    private var currentValue: Double {
+            get {
+                guard let textLabelCurrentValue = Double(textLabel.text!) else {
+                    fatalError("Double(textLabel.text! error")
+                }
+                return textLabelCurrentValue
+            }
+            set {
+                textLabel.text = String(newValue)
+            }
+        }
+    
+    
+    
     //MARK: - Text Label Section
     
     private let backgroundView: UIView = {
@@ -369,10 +387,36 @@ class ViewController: UIViewController {
     //MARK: - Functions
     
     @objc private func nonNumberButtonPressed(sender: UIButton!) {
-    
+            isFinishedTyping = true
     }
     
     @objc private func numberButtonPressed(sender: UIButton!) {
+        if let numberValue = sender.currentTitle {
+            
+            if isFinishedTyping == true {
+                // we don't want to start with "."
+                if numberValue == "." {
+                   return
+                }
+                textLabel.text = numberValue
+                isFinishedTyping = false
+            // when we have first char this else statement starts:
+            } else if isDotUsed == true {
+                    // We dont want to use "." second time
+                    if numberValue != "." {
+                        textLabel.text = textLabel.text! + numberValue
+                    } else {
+                        return
+                    }
+             
+            } else {
+                    // isDotUsed == false. This is our first "."
+                    if numberValue == "." {
+                        isDotUsed = true
+                    }
+                    textLabel.text = textLabel.text! + numberValue
+            }
+        }
 
     }
     
