@@ -292,21 +292,21 @@ class ViewController: UIViewController {
     
     private func addBackgroundView() {
         view.addSubview(backgroundView)
-        backgroundView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(0)
-            $0.left.equalToSuperview().offset(0)
-            $0.right.equalToSuperview().offset(0)
-            $0.height.equalTo(150)
+        backgroundView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(0)
+            make.left.equalToSuperview().offset(0)
+            make.right.equalToSuperview().offset(0)
+            make.height.equalTo(150)
         }
     }
     
     private func addTextLabel() {
         backgroundView.addSubview(textLabel)
-        textLabel.snp.makeConstraints {
-            $0.left.equalTo(backgroundView.snp.left).offset(10)
-            $0.right.equalTo(backgroundView.snp.right).offset(-10)
-            $0.bottom.equalTo(backgroundView.snp.bottom).offset(10)
-            $0.height.equalTo(100)
+        textLabel.snp.makeConstraints { make in
+            make.left.equalTo(backgroundView.snp.left).offset(10)
+            make.right.equalTo(backgroundView.snp.right).offset(-10)
+            make.bottom.equalTo(backgroundView.snp.bottom).offset(10)
+            make.height.equalTo(100)
         }
     }
     
@@ -358,11 +358,11 @@ class ViewController: UIViewController {
         for item in items {
             mainStackView.addArrangedSubview(item)
         }
-        mainStackView.snp.makeConstraints{
-            $0.top.equalTo(backgroundView.snp.bottom).offset(0)
-            $0.left.equalToSuperview().offset(0)
-            $0.right.equalToSuperview().offset(0)
-            $0.bottom.equalToSuperview().offset(0)
+        mainStackView.snp.makeConstraints{ make in
+            make.top.equalTo(backgroundView.snp.bottom).offset(0)
+            make.left.equalToSuperview().offset(0)
+            make.right.equalToSuperview().offset(0)
+            make.bottom.equalToSuperview().offset(0)
         }
     }
     
