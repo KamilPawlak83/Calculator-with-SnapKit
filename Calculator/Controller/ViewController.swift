@@ -14,12 +14,12 @@ class ViewController: UIViewController {
     
     private var isDotUsed = false
     
-    private var currentValue: Double {
+    private var valueOnTextLabel: Double {
             get {
-                guard let textLabelCurrentValue = Double(textLabel.text!) else {
+                guard let currentValue = Double(textLabel.text!) else {
                     fatalError("Double(textLabel.text! error")
                 }
-                return textLabelCurrentValue
+                return currentValue
             }
             set {
                 textLabel.text = String(newValue)
@@ -388,6 +388,13 @@ class ViewController: UIViewController {
     
     @objc private func nonNumberButtonPressed(sender: UIButton!) {
             isFinishedTyping = true
+        if let nonNumber = sender.currentTitle {
+            let calculatorManager = CalculatorManager(value: valueOnTextLabel)
+            guard let result = calculatorManager.calculate(operation: nonNumber) else {
+                fatalError("calculate error")
+            }
+            valueOnTextLabel = result
+        }
     }
     
     @objc private func numberButtonPressed(sender: UIButton!) {
