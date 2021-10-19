@@ -46,6 +46,10 @@ struct K {
         static let zero = "0"
     }
     
+    struct SpecialSign {
+        static let dot = "."
+    }
+    
 }
 
 
