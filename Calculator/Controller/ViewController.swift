@@ -386,8 +386,6 @@ class ViewController: UIViewController {
     
     //MARK: - Functions
     
-
-    
     @objc private func nonNumberButtonPressed(sender: UIButton!) {
             isFinishedTyping = true
             calculatorManager.setValue(valueOnTextLabel)
