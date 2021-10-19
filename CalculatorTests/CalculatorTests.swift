@@ -9,25 +9,25 @@ import XCTest
 @testable import Calculator
 
 class CalculatorTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testAddNumbers() {
+        let tester = CalculatorManager()
+        let result = tester.addNumbers(x: 1, y: 3)
+        XCTAssertEqual(result, 4)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testMultiplyNumbers() {
+        let tester = CalculatorManager()
+        let result = tester.multiplyNumbers(x: 2, y: 5)
+        XCTAssertEqual(result, 10)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testSubtractNumbers() {
+        let tester = CalculatorManager()
+        let result = tester.subtractNumbers(x: 4, y: 2)
+        XCTAssertEqual(result, 2)
     }
+    
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+   
 }

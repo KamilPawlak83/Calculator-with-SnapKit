@@ -13,17 +13,19 @@ struct CalculatorManager {
     
     private var plusMinusDivisionMultiplyCalculation: (firstValue: Double, operaton: String)?
     
+    // After nonNumberButtonPressed (on VC) the value from textLabel is set
     mutating func setValue(_ value: Double) {
         self.value = value
     }
     
     mutating func calculate(operation: String) -> Double? {
         if let currentValue = value {
+            
             switch operation {
             case K.Operation.plusMinus:
                 return currentValue * -1
             case K.Operation.AC:
-                return 0
+                return 0.0
             case K.Operation.percentage:
                 return currentValue * 0.01
             case K.Operation.equal:
@@ -31,6 +33,7 @@ struct CalculatorManager {
             default:
                 plusMinusDivisionMultiplyCalculation = (firstValue: currentValue, operaton: operation)
             }
+            
         }
         return nil
         
@@ -45,11 +48,24 @@ struct CalculatorManager {
             case K.Operation.minus: return firstValue - secondValue
             case K.Operation.multiply: return firstValue * secondValue
             case K.Operation.division: return firstValue / secondValue
-            default:
-                fatalError("error with operation: plus, minus, division, multiply")
+            default: fatalError("error with operation: plus, minus, division, multiply")
             }
+            
         }
         return nil
+    }
+    
+    //MARK: - This section is only for learning how to test!
+    func addNumbers(x: Int, y: Int) -> Int {
+        return x + y
+    }
+    
+    func multiplyNumbers(x: Int, y: Int) -> Int {
+        return x * y
+    }
+    
+    func subtractNumbers(x: Int, y: Int) -> Int {
+        return x - y
     }
     
 
