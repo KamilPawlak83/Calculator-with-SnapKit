@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     private let textLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "0"
+        label.text = K.Number.zero
         label.font = .systemFont(ofSize: 50)
         label.textAlignment = .right
         label.numberOfLines = 0
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     
     private let ACButton: UIButton = {
         let button = UIButton()
-        button.setTitle("AC", for: .normal)
+        button.setTitle(K.Operation.AC, for: .normal)
         button.backgroundColor = K.ButtonColour.topRowOperations
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.addTarget(self, action: #selector(nonNumberButtonPressed), for: .touchUpInside)
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     
     private let plusMinusButton: UIButton = {
         let button = UIButton()
-        button.setTitle("+/-", for: .normal)
+        button.setTitle(K.Operation.plusMinus, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.topRowOperations
         button.addTarget(self, action: #selector(nonNumberButtonPressed), for: .touchUpInside)
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     
     private let percentageButton: UIButton = {
         let button = UIButton()
-        button.setTitle("%", for: .normal)
+        button.setTitle(K.Operation.percentage, for: .normal)
         button.backgroundColor = K.ButtonColour.topRowOperations
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.addTarget(self, action: #selector(nonNumberButtonPressed), for: .touchUpInside)
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
     
     private let divisionButton: UIButton = {
         let button = UIButton()
-        button.setTitle("÷", for: .normal)
+        button.setTitle(K.Operation.division, for: .normal)
         button.backgroundColor = K.ButtonColour.rightColumnOperations
         button.titleLabel!.font = .systemFont(ofSize: 35)
         button.setTitleColor(K.ButtonColour.background, for: .normal)
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
     
     private let numberSevenButton: UIButton = {
         let button = UIButton()
-        button.setTitle("7", for: .normal)
+        button.setTitle(K.Number.seven, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
     
     private let numberEightButton: UIButton = {
         let button = UIButton()
-        button.setTitle("8", for: .normal)
+        button.setTitle(K.Number.eight, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -123,7 +123,7 @@ class ViewController: UIViewController {
     
     private let numberNineButton: UIButton = {
         let button = UIButton()
-        button.setTitle("9", for: .normal)
+        button.setTitle(K.Number.nine, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -132,7 +132,7 @@ class ViewController: UIViewController {
     
     private let multiplyButton: UIButton = {
         let button = UIButton()
-        button.setTitle("×", for: .normal)
+        button.setTitle(K.Operation.multiply, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 35)
         button.backgroundColor = K.ButtonColour.rightColumnOperations
         button.setTitleColor(K.ButtonColour.background, for: .normal)
@@ -152,7 +152,7 @@ class ViewController: UIViewController {
     
     private let numberFourButton: UIButton = {
         let button = UIButton()
-        button.setTitle("4", for: .normal)
+        button.setTitle(K.Number.four, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -161,7 +161,7 @@ class ViewController: UIViewController {
     
     private let numberFiveButton: UIButton = {
         let button = UIButton()
-        button.setTitle("5", for: .normal)
+        button.setTitle(K.Number.five, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -170,7 +170,7 @@ class ViewController: UIViewController {
     
     private let numberSixButton: UIButton = {
         let button = UIButton()
-        button.setTitle("6", for: .normal)
+        button.setTitle(K.Number.six, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -179,7 +179,7 @@ class ViewController: UIViewController {
     
     private let substractionButton: UIButton = {
         let button = UIButton()
-        button.setTitle("-", for: .normal)
+        button.setTitle(K.Operation.minus, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 35)
         button.backgroundColor = K.ButtonColour.rightColumnOperations
         button.setTitleColor(K.ButtonColour.background, for: .normal)
@@ -198,7 +198,7 @@ class ViewController: UIViewController {
     
     private let numberOneButton: UIButton = {
         let button = UIButton()
-        button.setTitle("1", for: .normal)
+        button.setTitle(K.Number.one, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -207,7 +207,7 @@ class ViewController: UIViewController {
     
     private let numberTwoButton: UIButton = {
         let button = UIButton()
-        button.setTitle("2", for: .normal)
+        button.setTitle(K.Number.two, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -216,7 +216,7 @@ class ViewController: UIViewController {
     
     private let numberThreeButton: UIButton = {
         let button = UIButton()
-        button.setTitle("3", for: .normal)
+        button.setTitle(K.Number.three, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -225,7 +225,7 @@ class ViewController: UIViewController {
     
     private let additionButton: UIButton = {
         let button = UIButton()
-        button.setTitle("+", for: .normal)
+        button.setTitle(K.Operation.plus, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 35)
         button.backgroundColor = K.ButtonColour.rightColumnOperations
         button.setTitleColor(K.ButtonColour.background, for: .normal)
@@ -245,7 +245,7 @@ class ViewController: UIViewController {
     
     private let numberZeroButton: UIButton = {
         let button = UIButton()
-        button.setTitle("0", for: .normal)
+        button.setTitle(K.Number.zero, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -262,7 +262,7 @@ class ViewController: UIViewController {
     
     private let dotButton: UIButton = {
         let button = UIButton()
-        button.setTitle(".", for: .normal)
+        button.setTitle(K.SpecialSign.dot, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 30)
         button.backgroundColor = K.ButtonColour.numbers
         button.addTarget(self, action: #selector(numberButtonPressed), for: .touchUpInside)
@@ -271,7 +271,7 @@ class ViewController: UIViewController {
     
     private let equalButton: UIButton = {
         let button = UIButton()
-        button.setTitle("=", for: .normal)
+        button.setTitle(K.Operation.equal, for: .normal)
         button.titleLabel!.font = .systemFont(ofSize: 35)
         button.backgroundColor = K.ButtonColour.rightColumnOperations
         button.setTitleColor(K.ButtonColour.background, for: .normal)
@@ -400,7 +400,7 @@ class ViewController: UIViewController {
             
             if isFinishedTyping == true {
                 // we don't want to start with "."
-                if numberValue == "." {
+                if numberValue == K.SpecialSign.dot {
                    return
                 }
                 textLabel.text = numberValue
@@ -408,7 +408,7 @@ class ViewController: UIViewController {
             // when we have first char this else statement starts:
             } else if isDotUsed == true {
                     // We dont want to use "." second time
-                    if numberValue != "." {
+                if numberValue != K.SpecialSign.dot {
                         textLabel.text = textLabel.text! + numberValue
                     } else {
                         return
@@ -416,7 +416,7 @@ class ViewController: UIViewController {
              
             } else {
                     // isDotUsed == false. This is our first "."
-                    if numberValue == "." {
+                if numberValue == K.SpecialSign.dot {
                         isDotUsed = true
                     }
                     textLabel.text = textLabel.text! + numberValue
