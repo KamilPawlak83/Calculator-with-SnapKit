@@ -10,7 +10,7 @@ The only non standard thing is the use of SnapKit for Auto-Layout
 
 * First of all: SnapKit
 * Auto-Layout programmatically
-* how to use static proerties in Constants file
+* how to use static properties in Constants file
 * Simple use of XCTest (i added one extra section to introduct this idea)
 
 ### UI
