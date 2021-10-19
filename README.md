@@ -15,4 +15,4 @@ The only non standard thing is the use of SnapKit for Auto-Layout
 
 ### UI
 
-// TO DO
+![Calculator UI](https://user-images.githubusercontent.com/73897166/137952947-161fcd65-1c83-486a-9ab0-0343e7080b74.png)
