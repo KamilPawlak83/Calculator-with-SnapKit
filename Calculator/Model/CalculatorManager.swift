@@ -20,13 +20,13 @@ struct CalculatorManager {
     mutating func calculate(operation: String) -> Double? {
         if let currentValue = value {
             switch operation {
-            case "+/-":
+            case K.Operation.plusMinus:
                 return currentValue * -1
-            case "AC":
+            case K.Operation.AC:
                 return 0
-            case "%":
+            case K.Operation.percentage:
                 return currentValue * 0.01
-            case "=":
+            case K.Operation.equal:
                 return performCalculationWithTwoNumbers(secondValue: currentValue)
             default:
                 plusMinusDivisionMultiplyCalculation = (firstValue: currentValue, operaton: operation)
