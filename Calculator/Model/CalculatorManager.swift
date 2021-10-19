@@ -11,7 +11,7 @@ struct CalculatorManager {
     
     private var value: Double?
     
-    private var plusMinusSubstrMultiplyCalculation: (firstValue: Double, operaton: String)?
+    private var plusMinusDivisionMultiplyCalculation: (firstValue: Double, operaton: String)?
     
     mutating func setValue(_ value: Double) {
         self.value = value
@@ -29,26 +29,24 @@ struct CalculatorManager {
             case "=":
                 return performCalculationWithTwoNumbers(secondValue: currentValue)
             default:
-                plusMinusSubstrMultiplyCalculation = (firstValue: currentValue, operaton: operation)
-               
+                plusMinusDivisionMultiplyCalculation = (firstValue: currentValue, operaton: operation)
             }
         }
-        
         return nil
         
     }
     
     private func performCalculationWithTwoNumbers(secondValue: Double) -> Double? {
         
-        if let firstValue = plusMinusSubstrMultiplyCalculation?.firstValue, let operation = plusMinusSubstrMultiplyCalculation?.operaton {
+        if let firstValue = plusMinusDivisionMultiplyCalculation?.firstValue, let operation = plusMinusDivisionMultiplyCalculation?.operaton {
             
             switch operation {
-            case "+": return firstValue + secondValue
-            case "-": return firstValue - secondValue
-            case "×": return firstValue * secondValue
-            case "÷": return firstValue / secondValue
+            case K.Operation.plus: return firstValue + secondValue
+            case K.Operation.minus: return firstValue - secondValue
+            case K.Operation.multiply: return firstValue * secondValue
+            case K.Operation.division: return firstValue / secondValue
             default:
-                fatalError("error with operation: plus, minus, substract, multiply")
+                fatalError("error with operation: plus, minus, division, multiply")
             }
         }
         return nil
