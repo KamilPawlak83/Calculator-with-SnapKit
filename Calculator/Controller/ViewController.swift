@@ -406,6 +406,7 @@ class ViewController: UIViewController {
                 }
                 textLabel.text = numberValue
                 isFinishedTyping = false
+                
             // when we have first char this else statement starts:
             } else if isDotUsed == true {
                     // We dont want to use "." second time
