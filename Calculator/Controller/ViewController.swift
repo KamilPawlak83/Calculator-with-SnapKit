@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             }
         }
     
-    
+    private var calculatorManager = CalculatorManager()
     
     //MARK: - Text Label Section
     
@@ -386,15 +386,15 @@ class ViewController: UIViewController {
     
     //MARK: - Functions
     
+
+    
     @objc private func nonNumberButtonPressed(sender: UIButton!) {
             isFinishedTyping = true
-        if let nonNumber = sender.currentTitle {
-            let calculatorManager = CalculatorManager(value: valueOnTextLabel)
-            guard let result = calculatorManager.calculate(operation: nonNumber) else {
-                fatalError("calculate error")
-            }
+            calculatorManager.setValue(valueOnTextLabel)
+        
+            if let nonNumber = sender.currentTitle, let result = calculatorManager.calculate(operation: nonNumber)  {
             valueOnTextLabel = result
-        }
+            }
     }
     
     @objc private func numberButtonPressed(sender: UIButton!) {

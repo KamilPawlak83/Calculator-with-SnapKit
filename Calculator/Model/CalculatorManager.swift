@@ -9,9 +9,15 @@ import Foundation
 
 struct CalculatorManager {
     
-    var value: Double?
+    private var value: Double?
     
-    func calculate(operation: String) -> Double? {
+    private var plusMinusSubstrMultiplyCalculation: (firstValue: Double, operaton: String)?
+    
+    mutating func setValue(_ value: Double) {
+        self.value = value
+    }
+    
+    mutating func calculate(operation: String) -> Double? {
         if let currentValue = value {
             switch operation {
             case "+/-":
@@ -20,8 +26,11 @@ struct CalculatorManager {
                 return 0
             case "%":
                 return currentValue * 0.01
+            case "=":
+                return performCalculationWithTwoNumbers(secondValue: currentValue)
             default:
-                return currentValue
+                plusMinusSubstrMultiplyCalculation = (firstValue: currentValue, operaton: operation)
+               
             }
         }
         
@@ -29,12 +38,24 @@ struct CalculatorManager {
         
     }
     
+    private func performCalculationWithTwoNumbers(secondValue: Double) -> Double? {
+        
+        if let firstValue = plusMinusSubstrMultiplyCalculation?.firstValue, let operation = plusMinusSubstrMultiplyCalculation?.operaton {
+            
+            switch operation {
+            case "+": return firstValue + secondValue
+            case "-": return firstValue - secondValue
+            case "×": return firstValue * secondValue
+            case "÷": return firstValue / secondValue
+            default:
+                fatalError("error with operation: plus, minus, substract, multiply")
+            }
+        }
+        return nil
+    }
     
-    
-    
-    
-    
-    
+
+
     
     
 }
